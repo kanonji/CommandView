@@ -17,6 +17,7 @@ public class CommandView : EditorWindow {
 			strategies.Add (new Lights ());
 			strategies.Add (new Sprites ());
 			strategies.Add (new Empty ());
+			strategies.Add (new Folder ());
 		}
 	}
 
