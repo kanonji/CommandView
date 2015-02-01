@@ -30,3 +30,13 @@ Display Commandview and type command listed below into textbox.
 * sprite
 * empty
 * folder
+
+## Install
+
+Just plate this to `./YourUnityProject/Assets/CommandView`.
+
+or
+
+```
+$ git submodule add https://github.com/kanonji/CommandView.git Assets/CommandView
+```
