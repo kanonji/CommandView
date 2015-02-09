@@ -14,8 +14,8 @@ namespace Kanonji.CommandView{
 			return new List<string>(commands);
 		}
 
-		public void run(string command){
-			createFolder (command);
+		public void run(string[] commands){
+			createFolder (commands[0]);
 		}
 
 		protected void createFolder (string command) {

@@ -22,8 +22,8 @@ namespace Kanonji.CommandView{
 			return lights.Keys.ToList();
 		}
 
-		public void run(string command){
-			createLight (command);
+		public void run(string[] commands){
+			createLight (commands[0]);
 		}
 
 		protected void createLight (string command) {

@@ -5,6 +5,6 @@ namespace Kanonji.CommandView{
 
 		 List<string> getCommand ();
 
-		void run (string command);
+		void run (string[] commands);
 	}
 }

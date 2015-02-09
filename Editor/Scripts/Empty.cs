@@ -12,8 +12,8 @@ namespace Kanonji.CommandView{
 			return new List<string>(commands);
 		}
 
-		public void run(string command){
-			createEmptyGameObject (command);
+		public void run(string[] commands){
+			createEmptyGameObject (commands[0]);
 		}
 
 		protected void createEmptyGameObject (string command) {

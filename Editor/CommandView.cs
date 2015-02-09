@@ -25,7 +25,8 @@ public class CommandView : EditorWindow {
 		if (Event.current.type == EventType.KeyUp && Event.current.keyCode == KeyCode.Return) {
 			strategies.ForEach ((ICommandStrategy strategy) => {
 				if(strategy.getCommand().Contains(command)){
-					strategy.run(command);
+                    string[] commands = {command};
+					strategy.run(commands);
 				}
 			});
 			command = "";

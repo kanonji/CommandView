@@ -14,8 +14,8 @@ namespace Kanonji.CommandView{
 			return sprites.Keys.ToList();
 		}
 
-		public void run(string command){
-			createSprite (command);
+		public void run(string[] commands){
+			createSprite (commands[0]);
 		}
 
 		protected void createSprite (string command) {

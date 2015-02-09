@@ -11,8 +11,8 @@ namespace Kanonji.CommandView{
 			return new List<string>(primitives);
 		}
 
-		public void run(string command){
-			createPrimitive (command);
+		public void run(string[] commands){
+			createPrimitive (commands[0]);
 		}
 
 		protected void createPrimitive (string command) {
