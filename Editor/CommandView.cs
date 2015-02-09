@@ -23,10 +23,10 @@ public class CommandView : EditorWindow {
 		}
 		command = EditorGUILayout.TextField (command);
 		if (Event.current.type == EventType.KeyUp && Event.current.keyCode == KeyCode.Return) {
+            string[] parsedCommand = ParseCommand(command);
 			strategies.ForEach ((ICommandStrategy strategy) => {
-				if(strategy.getCommand().Contains(command)){
-                    string[] commands = {command};
-					strategy.run(commands);
+				if(strategy.getCommand().Contains(parsedCommand[0])){
+					strategy.run(parsedCommand);
 				}
 			});
 			command = "";
@@ -41,4 +41,8 @@ public class CommandView : EditorWindow {
 		strategies.Add (new Empty ());
 		strategies.Add (new Folder ());
 	}
+
+    private string[] ParseCommand(string command) {
+        return command.Split(' ');
+    }
 }
