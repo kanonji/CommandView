@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace Kanonji.CommandView{
+namespace Kanonji.CommandView {
 	interface ICommandStrategy {
 
-		 List<string> getCommand ();
+		List<string> getCommand();
 
-		void run (string[] commands);
+		void run(string[] commands);
 	}
 }
