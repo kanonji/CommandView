@@ -13,11 +13,15 @@ namespace Kanonji.CommandView{
 		}
 
 		public void run(string[] commands){
+            if (2 == commands.Length){
+                createEmptyGameObject (commands[0], commands[1]);
+                return;
+            }
 			createEmptyGameObject (commands[0]);
 		}
 
-		protected void createEmptyGameObject (string command) {
-			new GameObject ("GameObject");
+		protected void createEmptyGameObject (string command, string name = "GameObject") {
+			new GameObject (name);
 		}
 	}
 }

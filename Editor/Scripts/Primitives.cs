@@ -12,10 +12,14 @@ namespace Kanonji.CommandView{
 		}
 
 		public void run(string[] commands){
+            if (2 == commands.Length){
+                createPrimitive (commands[0], commands[1]);
+                return;
+            }
 			createPrimitive (commands[0]);
 		}
 
-		protected void createPrimitive (string command) {
+		protected void createPrimitive (string command, string name = null) {
 			PrimitiveType? type = null;
 			switch (command) {
 			case "sphere":
@@ -38,7 +42,10 @@ namespace Kanonji.CommandView{
 				break;
 			}
 			if (type.HasValue) {
-				GameObject.CreatePrimitive (type.Value);
+				GameObject created = GameObject.CreatePrimitive (type.Value);
+                if (false == string.IsNullOrEmpty(name)) {
+                    created.name = name;
+                }
 			}
 		}
 	}

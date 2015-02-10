@@ -23,12 +23,20 @@ namespace Kanonji.CommandView{
 		}
 
 		public void run(string[] commands){
+            if (2 == commands.Length){
+                createLight (commands[0], commands[1]);
+                return;
+            }
 			createLight (commands[0]);
 		}
 
-		protected void createLight (string command) {
+		protected void createLight (string command, string name = null) {
 			LightData obj = lights [command];
-			new GameObject (obj.Name).AddComponent<Light> ().light.type = obj.Type;
+            Debug.Log(string.IsNullOrEmpty(name));
+            if (string.IsNullOrEmpty(name)) {
+                name = obj.Name;
+            }
+			new GameObject (name).AddComponent<Light> ().light.type = obj.Type;
 		}
 	}
 }

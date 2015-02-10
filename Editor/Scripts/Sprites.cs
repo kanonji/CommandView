@@ -15,11 +15,17 @@ namespace Kanonji.CommandView{
 		}
 
 		public void run(string[] commands){
+            if (2 == commands.Length){
+                createSprite (commands[0], commands[1]);
+                return;
+            }
 			createSprite (commands[0]);
 		}
 
-		protected void createSprite (string command) {
-			string name = sprites [command];
+		protected void createSprite (string command, string name = null) {
+            if (string.IsNullOrEmpty(name)) {
+                name = sprites[command];
+            }
 			new GameObject (name).AddComponent<SpriteRenderer> ();
 		}
 	}
